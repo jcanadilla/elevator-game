@@ -7,10 +7,14 @@ module.exports = {
             floor.on("up_button_pressed", function() {
                 // Maybe tell an elevator to go to this floor?
                 console.log('FLOOR UP PRESSED?', this.level);
+				elevator.destinationQueue.push(this.level);
+				elevator.checkDestinationQueue();
             });
             floor.on("down_button_pressed", function() {
                 // Maybe tell an elevator to go to this floor?
                 console.log('FLOOR DOWN PRESSED?', this.level);
+				elevator.destinationQueue.push(this.level);
+				elevator.checkDestinationQueue();
             })
         })
        
